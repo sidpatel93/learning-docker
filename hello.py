@@ -12,14 +12,6 @@ def visitcount():
     r.set('visit', visit+1)
     return visit
 
-def bytes_to_int(bytes):
-    result = 0
-
-    for b in bytes:
-        result = result * 256 + int(b)
-
-    return result    
-
 @app.route("/")
 def hello_world():
     return render_template('hello.html', test = visitcount())
