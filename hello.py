@@ -8,7 +8,7 @@ r.set('visit',0)
 test = 0
 
 def visitcount():
-    visit = int.from_bytes(r.get('visit'),"little") - 48
+    visit = int((r.get('visit')).decode("utf-8"))
     r.set('visit', visit+1)
     return visit
 
